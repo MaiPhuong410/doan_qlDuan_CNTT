@@ -22,12 +22,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Chăm sóc da", "sp_Chamsocda", "SanPham")</li>
-                    <li>@Html.ActionLink("Trang điểm mặt", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Trang điểm mắt", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Trang điểm môi", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Trang điểm mặt", "sp_Trangdiemface", "SanPham")</li>
+                    <li>@Html.ActionLink("Trang điểm mắt", "sp_TrangdiemEyes", "SanPham")</li>
+                    <li>@Html.ActionLink("Trang điểm môi", "sp_TrangdiemMoi", "SanPham")</li>
                 </ul>
-
-                @Html.ActionLink("Giỏ hàng", "Index", "Home", new { area = "Store" }, new { @class = "navbar-brand" })
+                <div class="navbar-right">
+                    @Html.ActionLink("Giỏ hàng", "Index", "Home", new { area = "Store" }, new { @class = "navbar-brand" })
+                </div>
+                
             </div>           
         </div>
     </div>
