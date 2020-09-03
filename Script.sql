@@ -91,6 +91,7 @@ Create table [AccountAdmin]
 	[Password] Char(15) NULL,
 Primary Key ([UserName])
 ) 
+alter table AccountAdmin alter column [Password] varchar(30)
 go
 
 Create table [DONHANG]
@@ -190,7 +191,7 @@ Set quoted_identifier off
 go
 
 --NHAP DU LIEU BANG ACCOUNTADMIN
-INSERT INTO AccountAdmin (UserName, Password) VALUES ('admin','123')
+INSERT INTO AccountAdmin (UserName, Password) VALUES ('admin','6CMbfolFR1Kwq2PJOewmzA==')
 --NHAP DU LIEU BANG LOAISP
 INSERT INTO LOAISP (MaLoai,TenLoai) VALUES ('L0001',N'Chăm sóc da')
 INSERT INTO LOAISP (MaLoai,TenLoai) VALUES ('L0002',N'Làm sạch da')
