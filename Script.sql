@@ -68,13 +68,14 @@ go
 
 Create table [KHACHHANG]
 (
-	[MaKH] Char(5) NOT NULL,
+	[MaKH] int identity(1,1) NOT NULL,
 	[HoTen] Nvarchar(20) NULL,
 	[DiaChi] Nvarchar(15) NULL,
 	[SDT] Char(10) NULL,
-	[MaCapDo] Char(5) NOT NULL,
+	[MaCapDo] int NOT NULL,
 Primary Key ([MaKH])
 ) 
+drop table [KHACHHANG]
 go
 
 Create table [PHIEUGIAOHANG]
@@ -91,26 +92,28 @@ Create table [AccountAdmin]
 	[Password] Char(15) NULL,
 Primary Key ([UserName])
 ) 
-alter table AccountAdmin alter column [Password] varchar(30)
+alter table [AccountAdmin] alter column [Password] varchar(30)
 go
 
 Create table [DONHANG]
 (
-	[MaDH] Char(5) NOT NULL,
+	[MaDH] int identity(1,1) NOT NULL,
 	[NgayMua] Datetime NULL,
 	[NgayDuKienGiao] Datetime NULL,
 	[TinhTrang] Bit NULL,
-	[MaKH] Char(5) NOT NULL,
+	[MaKH] int NOT NULL,
 Primary Key ([MaDH])
 ) 
+drop table [DONHANG]
 go
 
 Create table [CapDoThanhVien]
 (
-	[MaCapDo] Char(5) NOT NULL,
+	[MaCapDo] int identity(1,1) NOT NULL,
 	[TenCapDo] Nvarchar(30) NULL,
 Primary Key ([MaCapDo])
 ) 
+drop table [CapDoThanhVien]
 go
 
 Create table [KHUYENMAI]
@@ -118,9 +121,10 @@ Create table [KHUYENMAI]
 	[MaKM] Char(5) NOT NULL,
 	[LoaiKM] Nvarchar(30) NULL,
 	[GTKM] Integer NULL,
-	[MaCapDo] Char(5) NOT NULL,
+	[MaCapDo] int NOT NULL,
 Primary Key ([MaKM])
 ) 
+drop table [KHUYENMAI]
 go
 
 Create table [CTDDH]
@@ -146,12 +150,13 @@ go
 Create table [CTDONHANG]
 (
 	[MaSP] Char(5) NOT NULL,
-	[MaDH] Char(5) NOT NULL,
+	[MaDH] int NOT NULL,
 	[SoLuong] Integer NULL,
 	[DGBan] Float NULL,
 	[ThanhTien] Float NULL,
 Primary Key ([MaSP],[MaDH])
 ) 
+drop table [CTDONHANG]
 go
 
 
@@ -258,24 +263,23 @@ INSERT INTO SANPHAM (MaSP,TenSP,DungTich,DonGiaMua,XuatXu,QuiCach,MoTa,MaLoai,Ma
 	VALUES ('SP021',N'Son Shu Uemura','2g','630000',N'Nhật Bản',N'Cây',N'Son shu Uemura Rouge Unlimited Matte Nhật Bản chiết xuất tự nhiên chất son Shu cổ điển nhưng cần độ lì hơn, matte vào môi và bám màu hơn, phù hợp với các chị em có màu da môi sậm màu, khó lên màu.','L0005','NCC01','TH007','sp021.jpg') 
 
 --NHAP DU LIEU BANG CAPDOTHANHVIEN
-INSERT INTO CapDoThanhVien (MaCapDo,TenCapDo) VALUES ('CD001',N'Thành viên Đồng')
-INSERT INTO CapDoThanhVien (MaCapDo,TenCapDo) VALUES ('CD002',N'Thành viên Bạc')
-INSERT INTO CapDoThanhVien (MaCapDo,TenCapDo) VALUES ('CD003',N'Thành viên Vàng')
-INSERT INTO CapDoThanhVien (MaCapDo,TenCapDo) VALUES ('CD004',N'Thành viên Kim cương')
+INSERT INTO CapDoThanhVien (TenCapDo) VALUES (N'Thành viên Đồng')
+INSERT INTO CapDoThanhVien (TenCapDo) VALUES (N'Thành viên Bạc')
+INSERT INTO CapDoThanhVien (TenCapDo) VALUES (N'Thành viên Vàng')
+INSERT INTO CapDoThanhVien (TenCapDo) VALUES (N'Thành viên Kim cương')
 
 --NHAP DU LIEU BANG KHACHHANG
-INSERT INTO KHACHHANG (MaKH,HoTen,DiaChi,SDT,MaCapDo) VALUES ('KH001',N'Nguyễn Thị Hoa',N'Quận 1','0964524356','CD001')
-INSERT INTO KHACHHANG (MaKH,HoTen,DiaChi,SDT,MaCapDo) VALUES ('KH002',N'Nguyễn Thị Hoa Quỳnh',N'Quận 10','0946786321','CD003')
-INSERT INTO KHACHHANG (MaKH,HoTen,DiaChi,SDT,MaCapDo) VALUES ('KH003',N'Nguyễn Thị Mỹ Lan',N'Quận Gò Vấp','0357656444','CD004')
-INSERT INTO KHACHHANG (MaKH,HoTen,DiaChi,SDT,MaCapDo) VALUES ('KH004',N'Trần Thị Ngọc Huệ',N'Quận Bình Thạnh','0919365897','CD002')
-INSERT INTO KHACHHANG (MaKH,HoTen,DiaChi,SDT,MaCapDo) VALUES ('KH005',N'Phan Nguyễn Tường Vy',N'Quận Thủ Đức','096234654','CD002')
+INSERT INTO KHACHHANG (HoTen,DiaChi,SDT,MaCapDo) VALUES (N'Nguyễn Thị Hoa',N'Quận 1','0964524356',1)
+INSERT INTO KHACHHANG (HoTen,DiaChi,SDT,MaCapDo) VALUES (N'Nguyễn Thị Hoa Quỳnh',N'Quận 10','0946786321',3)
+INSERT INTO KHACHHANG (HoTen,DiaChi,SDT,MaCapDo) VALUES (N'Nguyễn Thị Mỹ Lan',N'Quận Gò Vấp','0357656444',4)
+INSERT INTO KHACHHANG (HoTen,DiaChi,SDT,MaCapDo) VALUES (N'Trần Thị Ngọc Huệ',N'Quận Bình Thạnh','0919365897',2)
+INSERT INTO KHACHHANG (HoTen,DiaChi,SDT,MaCapDo) VALUES (N'Phan Nguyễn Tường Vy',N'Quận Thủ Đức','096234654',2)
 
 --NHAP DU LIEU BANG KHUYENMAI
-INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM001',N'Tri ân thành viên Đồng','10','CD001')
-INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM002',N'Tri ân thành viên Bạc','25','CD002')
-INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM003',N'Tri ân thành viên Vàng','50','CD003')
-INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM004',N'Tri ân thành viên Kim Cương','70','CD004')
-
+INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM001',N'Tri ân thành viên Đồng','10',1)
+INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM002',N'Tri ân thành viên Bạc','25',2)
+INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM003',N'Tri ân thành viên Vàng','50',3)
+INSERT INTO KHUYENMAI (MaKM,LoaiKM,GTKM,MaCapDo) VALUES ('KM004',N'Tri ân thành viên Kim Cương','70',4)
 set dateformat dmy
 --NHAP DU LIEU BANG DONDATHANG (0-CHUA GIAO DU/1-DA GIAO DU)
 INSERT INTO DONDATHANG (MaDDH,MaNCC,NgayLap,MaTT) VALUES ('DDH01','NCC01','15/6/2020',0)
@@ -301,15 +305,15 @@ INSERT INTO CTPHIEUGIAO (MaDDH,SoPhieuGiao,SLGiao,DGGiao,ThanhTien)
 		VALUES ('DDH03','PG003','5','40000','1425000')
  
 --NHAP DU LIEU BANG DONHANG (0-DANG GIAO/1-DA NHAN)
-INSERT INTO DONHANG (MaDH,NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('DH001','1/8/2020','2/8/2020',0,'KH001')
-INSERT INTO DONHANG (MaDH,NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('DH002','10/8/2020','10/8/2020',1,'KH005')
-INSERT INTO DONHANG (MaDH,NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('DH003','25/8/2020','27/8/2020',0,'KH004')
+INSERT INTO DONHANG (NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('1/8/2020','2/8/2020',0,3)
+INSERT INTO DONHANG (NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('10/8/2020','10/8/2020',1,5)
+INSERT INTO DONHANG (NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('25/8/2020','27/8/2020',0,4)
 
 --NHAP DU LIEU BANG CTDONHANG
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES ('DH001','SP009',1,'350000','350000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES ('DH001','SP008',1,'245000','245000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES ('DH002','SP004',1,'179000','179000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES ('DH003','SP009',1,'350000','350000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES ('DH003','SP005',2,'130000','260000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (3,'SP009',1,'350000','350000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (3,'SP008',1,'245000','245000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (4,'SP004',1,'179000','179000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (4,'SP009',1,'350000','350000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (5,'SP005',2,'130000','260000')
 
 
