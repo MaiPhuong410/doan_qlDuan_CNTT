@@ -1,4 +1,6 @@
-﻿/*
+﻿drop database QLCH
+
+/*
 Created		01/09/2020
 Modified		01/09/2020
 Project		
@@ -75,7 +77,8 @@ Create table [KHACHHANG]
 	[MaCapDo] int NOT NULL,
 Primary Key ([MaKH])
 ) 
-drop table [KHACHHANG]
+
+--//drop table [KHACHHANG]
 go
 
 Create table [PHIEUGIAOHANG]
@@ -104,7 +107,7 @@ Create table [DONHANG]
 	[MaKH] int NOT NULL,
 Primary Key ([MaDH])
 ) 
-drop table [DONHANG]
+--drop table [DONHANG]
 go
 
 Create table [CapDoThanhVien]
@@ -113,7 +116,7 @@ Create table [CapDoThanhVien]
 	[TenCapDo] Nvarchar(30) NULL,
 Primary Key ([MaCapDo])
 ) 
-drop table [CapDoThanhVien]
+--drop table [CapDoThanhVien]
 go
 
 Create table [KHUYENMAI]
@@ -124,7 +127,7 @@ Create table [KHUYENMAI]
 	[MaCapDo] int NOT NULL,
 Primary Key ([MaKM])
 ) 
-drop table [KHUYENMAI]
+--drop table [KHUYENMAI]
 go
 
 Create table [CTDDH]
@@ -156,7 +159,7 @@ Create table [CTDONHANG]
 	[ThanhTien] Float NULL,
 Primary Key ([MaSP],[MaDH])
 ) 
-drop table [CTDONHANG]
+--drop table [CTDONHANG]
 go
 
 
@@ -176,7 +179,7 @@ Alter table [CTDDH] add  foreign key([MaDDH]) references [DONDATHANG] ([MaDDH]) 
 go
 Alter table [CTPHIEUGIAO] add  foreign key([MaDDH]) references [DONDATHANG] ([MaDDH])  on update no action on delete no action 
 go
-Alter table [DONHANG] add  foreign key([MaKH]) references [KHACHHANG] ([MaKH])  on update no action on delete no action 
+Alter table [DONHANG] add  foreign key([MaKH]) references [KHACHHANG] ([MaKH]) on update no action on delete no action 
 go
 Alter table [CTPHIEUGIAO] add  foreign key([SoPhieuGiao]) references [PHIEUGIAOHANG] ([SoPhieuGiao])  on update no action on delete no action 
 go
@@ -310,10 +313,10 @@ INSERT INTO DONHANG (NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('10/8/2020',
 INSERT INTO DONHANG (NgayMua,NgayDuKienGiao,TinhTrang,MaKH) VALUES ('25/8/2020','27/8/2020',0,4)
 
 --NHAP DU LIEU BANG CTDONHANG
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (3,'SP009',1,'350000','350000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (3,'SP008',1,'245000','245000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (4,'SP004',1,'179000','179000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (4,'SP009',1,'350000','350000')
-INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (5,'SP005',2,'130000','260000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (1,'SP009',1,'350000','350000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (1,'SP008',1,'245000','245000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (2,'SP004',1,'179000','179000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (2,'SP009',1,'350000','350000')
+INSERT INTO CTDONHANG (MaDH,MaSP,SoLuong,DGBan,ThanhTien) VALUES (3,'SP005',2,'130000','260000')
 
 
