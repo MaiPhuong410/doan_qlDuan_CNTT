@@ -1,0 +1,25 @@
+﻿@using doan_qlDuan_CNTT.Areas.Admin.Models;
+@using Newtonsoft.Json
+@*@{ var info = JsonConvert.DeserializeObject<AccountStaff>(Request.Cookies["Account"]?.Value); }*@
+<nav class="col-md-2 d-none d-md-block bg-light border-nav" style="height: 572px">
+    <ul class="nav flex-column">
+        <li class="nav-item ">
+            <a class="nav-link text-center" @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "text-primary" : "")" href="@Url.Action("Index","ProductType")"><i class="fa fa-th-list fa-fw"></i> Loại sản phẩm</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-center @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "text-primary" : "")" href="@Url.Action("Index","Product")"><i class="fa fa-cog fa-fw"></i> Sản phẩm</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-center @(ViewContext.RouteData.Values["Action"].ToString() == "Account" ? "text-primary" : "")" href="@Url.Action("Account","Admin")"><i class="fa fa-users fa-fw"></i> Nhà cung cấp</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-center @(ViewContext.RouteData.Values["Action"].ToString() == "Service" ? "text-primary" : "")" href="@Url.Action("Service","Admin")"><i class="fa fa-briefcase fa-fw"></i> Đơn hàng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-center @(ViewContext.RouteData.Values["Action"].ToString()=="Youtube" ? "text-primary" : "")" href="@Url.Action("Youtube", "Admin")"><i class="fa fa-youtube fa-fw"></i> Đơn đặt hàng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-center" href="@Url.Action("LogOut","Home")"><i class="fa fa-power-off"></i> Log out</a>
+        </li>
+    </ul>
+</nav>

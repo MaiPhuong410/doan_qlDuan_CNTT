@@ -1,0 +1,45 @@
+﻿@model IEnumerable<doan_qlDuan_CNTT.Areas.Admin.Models.LOAISP>
+
+@{
+    ViewBag.Title = "Danh sách loại sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Loại sản phẩm</h2>
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div id="panel-heading">
+            <a class="btn btn-primary btn-default" href="@Url.Action("Create", "ProductType")" role="button">Thêm loại sản phẩm mới</a>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-collapse">
+            <div class="table-responsive table-bordered">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã loại sản phẩm</th>
+                            <th>Tên loại sản phẩm</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.MaLoai)</td>
+                                <td>@Html.DisplayFor(modelItem => item.TenLoai)</td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "ProductType", new { maLoai = item.MaLoai })"><i class="fa fa-pencil fa-fw"></i></a>|
+                                    <a onclick="return confirm('Bạn có chắc chắn muốn xoá loại sản phẩm này?')" href="@Url.Action("Delete", "ProductType", new { maLoai = item.MaLoai })"><i class="fa fa-times fa-fw"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

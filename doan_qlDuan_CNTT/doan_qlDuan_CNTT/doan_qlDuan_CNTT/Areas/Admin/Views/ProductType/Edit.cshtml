@@ -1,0 +1,30 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.LOAISP
+
+@{
+    ViewBag.Title = "Cập nhật loại sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cập nhật loại sản phẩm</h2>
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "ProductType")
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaLoai)
+
+        <div class="form-group col-lg-5">
+            <label>Tên loại sản phẩm</label>
+            @Html.EditorFor(model => model.TenLoai, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên loại..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.TenLoai)</div>
+            <input type="submit" value="Cập nhật" class="btn btn-default" />
+        </div>
+    </div>
+}
+

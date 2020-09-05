@@ -1,0 +1,56 @@
+﻿@model IEnumerable<doan_qlDuan_CNTT.Areas.Admin.Models.NHACUNGCAP>
+
+@{
+    ViewBag.Title = "Danh sách nhà cung cấp";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nhà cung cấp</h2>
+
+<div class="text-warning">
+    @ViewBag.PdcError
+</div>
+<hr />
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="btn btn-primary btn-default" href="@Url.Action("Create", "Provider")" role="button">Thêm nhà cung cấp mới</a>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive table-bordered">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã nhà cung cấp</th>
+                            <th>Tên nhà cung cấp</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ Email</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.MaNCC)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TenNCC)</td>
+                            <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                            <td>@Html.DisplayFor(modelItem => item.SDT)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>
+                                <a href="@Url.Action("Edit", "Provider", new { id = item.MaNCC })"><i class="fa fa-pencil fa-fw"></i></a>|
+                                <a onclick="return confirm('Bạn có chắc chắn muốn xoá nhà cung cấp này?')" href="@Url.Action("Delete", "Provider", new { id = item.MaNCC })"><i class="fa fa-times fa-fw"></i></a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

@@ -1,0 +1,37 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.THUONGHIEU
+
+@{
+    ViewBag.Title = "Thêm thương hiệu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm thương hiệu</h2>
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "Producer")
+</div>
+
+
+@using (Html.BeginForm("Create", "Producer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        <div class="text-success">
+            @ViewBag.CreatePdcError
+        </div>
+        <hr />
+        <label>Mã thương hiệu </label>
+        @Html.EditorFor(model => model.MaTH, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập mã thương hiệu..." } })
+        <div class="text-danger">@Html.ValidationMessageFor(model => model.MaTH)</div>
+
+        <label>Tên thương hiệu</label>
+        @Html.EditorFor(model => model.TenTH, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên thương hiệu..." } })
+        <div class="text-danger">@Html.ValidationMessageFor(model => model.TenTH)</div>
+        <br />
+        <input type="submit" value="Tạo mới" class="btn btn-default" />
+    </div>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,32 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.LOAISP
+
+@{
+    ViewBag.Title = "Xóa loại sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa loại sản phẩm</h2>
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "ProductType")
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoai)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+       
+    }
+</div>

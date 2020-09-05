@@ -1,0 +1,49 @@
+﻿@model IEnumerable<doan_qlDuan_CNTT.Areas.Admin.Models.CTDONHANG>
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết đơn hàng</h2>
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "DonHang")
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DGBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaDH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DGBan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ThanhTien)
+    </td>
+
+</tr>
+    }
+
+</table>

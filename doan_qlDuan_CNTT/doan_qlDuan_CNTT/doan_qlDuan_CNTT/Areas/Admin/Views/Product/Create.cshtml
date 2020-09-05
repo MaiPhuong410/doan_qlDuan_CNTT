@@ -1,0 +1,76 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Thêm sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm mới sản phẩm</h2>
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "Product")
+</div>
+
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="text-success">
+            @ViewBag.CreateProError
+        </div>
+        <div class="form-group col-lg-6">
+            <label>Mã sản phẩm</label>
+            @Html.EditorFor(model => model.MaSP, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập mã sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.MaSP)</div>
+
+            <label>Tên sản phẩm</label>
+            @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.TenSP)</div>
+
+            <label>Dung tích</label>
+            @Html.EditorFor(model => model.DungTich, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập dung tích sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.DungTich)</div>
+
+            <label>Đơn giá</label>
+            @Html.EditorFor(model => model.DonGiaMua, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập giá sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.DonGiaMua)</div>
+
+            <label>Xuất xứ</label>
+            @Html.EditorFor(model => model.XuatXu, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập xuất xứ sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.XuatXu)</div>
+
+            <label>Qui cách</label>
+            @Html.EditorFor(model => model.QuiCach, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập qui cách sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.QuiCach)</div>
+
+            <label>Mô tả sản phẩm</label>
+            @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập mô tả sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.MoTa)</div>
+
+            <label>Loại sản phẩm</label>
+            @*@Html.DropDownListFor(model => model.LOAISP.MaLoai, ViewBag.typeListCreate as SelectList, new { @class = "form-control" })*@
+            @Html.EditorFor(model => model.MaLoai, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập loại sản phẩm..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.MaLoai)</div>
+            <label>Nhà cung cấp</label>
+            @*@Html.DropDownListFor(model => model.NHACUNGCAP.MaNCC, ViewBag.nccListCreate as SelectList, new { @class = "form-control" })*@
+            @Html.EditorFor(model => model.MaNCC, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập nhà cung cấp..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.MaNCC)</div>
+            <label>Thương hiệu</label>
+            @*@Html.DropDownListFor(model => model.THUONGHIEU.MaTH, ViewBag.thListCreate as SelectList, new { @class = "form-control" })*@
+            @Html.EditorFor(model => model.MaTH, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập thương hiệu..." } })
+            <div class="text-danger">@Html.ValidationMessageFor(model => model.MaTH)</div>
+            <label>Hình ảnh</label>
+            <input type="file" id="file" name="file" />
+            <div class="text-danger">@ViewBag.HinhAnh</div>
+
+            <br />
+            <input type="submit" value="Tạo mới" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

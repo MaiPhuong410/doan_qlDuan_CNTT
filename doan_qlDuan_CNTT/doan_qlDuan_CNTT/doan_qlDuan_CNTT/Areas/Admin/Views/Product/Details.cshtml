@@ -1,0 +1,101 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "Product")
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Tên sản phẩm</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            <label>Dung tích</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DungTich)
+        </dd>
+
+        <dt>
+            <label>Đơn giá</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGiaMua)
+        </dd>
+
+        <dt>
+            <label>Xuất xứ</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XuatXu)
+        </dd>
+
+        <dt>
+            <label>Qui cách</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuiCach)
+        </dd>
+
+        <dt>
+            <label>Mô tả</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            <label>Loại sản phẩm</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+
+        <dt>
+            <label>Nhà cung cấp</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNCC)
+        </dd>
+
+        <dt>
+            <label>Thương hiệu</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTH)
+        </dd>
+
+        <dt>
+            <label>Hình ảnh</label>
+        </dt>
+
+        <dd>
+            <img src="~/Images/@Url.Content(Model.HinhAnh)"
+                 alt="HinhAnh"
+                 width="100"
+                 height="80" />
+        </dd>
+
+    </dl>
+</div>
+

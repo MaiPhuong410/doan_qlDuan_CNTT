@@ -1,0 +1,107 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Xóa sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa sản phẩm</h2>
+
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "Provider")
+</div>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DungTich)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DungTich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGiaMua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGiaMua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.XuatXu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XuatXu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuiCach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuiCach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaNCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNCC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaTH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

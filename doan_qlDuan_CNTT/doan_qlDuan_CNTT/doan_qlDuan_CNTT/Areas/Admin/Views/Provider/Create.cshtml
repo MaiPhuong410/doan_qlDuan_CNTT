@@ -1,0 +1,49 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.NHACUNGCAP
+
+@{
+    ViewBag.Title = "Thêm nhà cung cấp";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm mới nhà cung cấp</h2>
+
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "Provider")
+</div>
+
+
+@using (Html.BeginForm("Create", "Provider", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true)
+    <div class="text-success">
+        @ViewBag.CreatePdcError
+    </div>
+    <hr />
+    <label>Mã nhà cung cấp </label>
+    @Html.EditorFor(model => model.MaNCC, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập mã nhà cung cấp..." } })
+    <div class="text-danger">@Html.ValidationMessageFor(model => model.MaNCC)</div>
+
+    <label>Tên nhà cung cấp</label>
+    @Html.EditorFor(model => model.TenNCC, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên nhà cung cấp..." } })
+    <div class="text-danger">@Html.ValidationMessageFor(model => model.TenNCC)</div>
+
+    <label>Địa chỉ </label>
+    @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập địa chỉ nhà cung cấp..." } })
+    <div class="text-danger">@Html.ValidationMessageFor(model => model.DiaChi)</div>
+
+    <label>Số điện thoại</label>
+    @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập số điện thoại nhà cung cấp..." } })
+    <div class="text-danger">@Html.ValidationMessageFor(model => model.SDT)</div>
+    <label>Địa chỉ Email</label>
+    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập email nhà cung cấp..." } })
+    <div class="text-danger">@Html.ValidationMessageFor(model => model.Email)</div>
+    <br />
+    <input type="submit" value="Tạo mới" class="btn btn-default" />
+</div>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

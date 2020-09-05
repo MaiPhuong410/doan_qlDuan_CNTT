@@ -1,0 +1,51 @@
+﻿@model IEnumerable<doan_qlDuan_CNTT.Areas.Admin.Models.SPBanChayResult>
+
+@{
+    ViewBag.Title = "Sản phẩm bán chạy";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sản phẩm bán chạy</h2>
+
+<div class="panel-body" style="width:100%;height:500px;overflow:auto;">
+    <div class="table-responsive table-bordered">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Loại sản phẩm</th>
+                    <th>Thương hiệu</th>
+                    <th>Hình ảnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MASP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TENSP)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenLoai)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenTH)
+                        </td>
+                        <td>
+                            <img src="~/Images/@Url.Content(item.HinhAnh)"
+                                 alt="HinhAnh"
+                                 width="100"
+                                 height="80" />
+                        </td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

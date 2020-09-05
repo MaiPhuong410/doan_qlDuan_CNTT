@@ -1,0 +1,38 @@
+﻿@model doan_qlDuan_CNTT.Areas.Admin.Models.DONHANG
+
+@{
+    ViewBag.Title = "Thêm đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm đơn hàng</h2>
+
+<div>
+    <i class="fa fa-undo fa-fw"></i>@Html.ActionLink("Quay lại", "Index", "DonHang")
+</div>
+
+@using (Html.BeginForm("Create", "DonHang", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group col-lg-5">
+        <label>Ngày mua</label>
+        @Html.EditorFor(model => model.NgayMua, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập ngày mua..." } })
+        <div class="text-danger">@Html.ValidationMessageFor(model => model.NgayMua)</div>
+        <label>Ngày dự kiến giao</label>
+        @Html.EditorFor(model => model.NgayDuKienGiao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập ngày dự kiến giao..." } })
+        <div class="text-danger">@Html.ValidationMessageFor(model => model.NgayDuKienGiao)</div>
+        <label>Tình trạng</label>
+        @Html.EditorFor(model => model.TinhTrang, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tình trạng..." } })
+        <div class="text-danger">@Html.ValidationMessageFor(model => model.TinhTrang)</div>
+        <label>Mã khách hàng</label>
+        @Html.EditorFor(model => model.MaKH, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập mã khách hàng..." } })
+        <div class="text-danger">@Html.ValidationMessageFor(model => model.MaKH)</div>
+        <br />
+        <input type="submit" value="Tạo mới" class="btn btn-default" />
+    </div>
+    </div>
+}
