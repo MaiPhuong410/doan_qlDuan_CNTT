@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<doan_qlDuan_CNTT.Areas.Store.ViewModels.SanPhamViewModel>
 
 @{
-    ViewBag.Title = "sp_Chamsocda";
+    ViewBag.Title = "sp_TrangdiemMoi";
     Layout = "~/Areas/Store/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SẢN PHẨM CHĂM SÓC DA</h2>
+<h2>sp_TrangdiemMoi</h2>
 
 <p>
     @using (Html.BeginForm())
     {
         <str>
             <th>
-                <p>@Html.TextBox("searchString") <input type="submit" value="Tìm Kiếm" style="background-color:lightpink"/></p>
-            </th>
-        </str>
-    }
+    <p>@Html.TextBox("searchString") <input type="submit" value="Tìm Kiếm" /></p>
+    </th>
+    </str>
+}
     </p>
     <table class="table">
         <tr>
@@ -64,7 +64,7 @@
                     @Html.DisplayFor(modelItem => item.MoTa)
                 </td>
                 <td>
-                    <a class="btn btn-success" href="@Url.Action("xemChitiet_SP_skin", "SanPham", new { id = item.MaSP })" style="background-color:lightpink">
+                    <a class="btn btn-success" href="@Url.Action("xemChitiet_SP_lips", "SanPham", new { id = item.MaSP })" style="background-color:lightpink">
                         Xem chi tiết
                     </a>
                 </td>

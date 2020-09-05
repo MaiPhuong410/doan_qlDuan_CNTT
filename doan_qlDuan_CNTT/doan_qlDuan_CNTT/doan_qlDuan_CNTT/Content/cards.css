@@ -1,0 +1,277 @@
+﻿body {
+}
+/*.cards {
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    grid-template-rows: 50px 50px;
+}*/
+.cards{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.cards button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .cards button:hover {
+        opacity: 0.7;
+    }
+.container1{
+    padding-right: 0px;
+    padding-left: 0px;
+    align-content: center;
+}
+.content-top {
+    padding: 4em 0 0;
+}
+
+.banner-info {
+    margin: 8em 0;
+    text-align: center;
+}
+
+    .banner-info h3 {
+        color: #fff;
+        font-size: 3em;
+        width: 80%;
+        margin: 0 auto 1em;
+    }
+
+.search-form {
+    width: 55%;
+    margin: 0 auto;
+}
+
+    /*.search-form input[type='text'] {
+        width: 93%;
+        padding: 10px;
+        outline: none;
+        font-size: 1em;
+        color: #fff;
+        border: 1px solid #FFF;
+        background: rgba(255, 255, 255, 0.45);
+    }*/
+
+   /* .search-form input[type='submit'] {
+        width: 40px;
+        height: 41px;
+        outline: none;
+        border: 1px solid #fff;
+        background-color:lightpink;
+        display: inline-block;
+    }*/
+
+        .search-form input[type='submit']:hover {
+            background-color:lightpink;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -o-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+        }
+/**/
+
+.hoverSlideHome img {
+    -webkit-transform: scale(0.8); /*Webkit: Scale down image to 0.8x original size*/
+    -moz-transform: scale(0.8); /*Mozilla scale version*/
+    -o-transform: scale(0.8); /*Opera scale version*/
+    -webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+    -moz-transition-duration: 0.5s; /*Mozilla duration version*/
+    -o-transition-duration: 0.5s; /*Opera duration version*/
+    opacity: 0.9; /*initial opacity of images*/
+    margin: 0 10px 5px 0; /*margin between images*/
+}
+
+.hoverSlideHome img:hover {
+    -webkit-transform: scale(1.1); /*Webkit: Scale up image to 1.2x original size*/
+    -moz-transform: scale(1.1); /*Mozilla scale version*/
+    -o-transform: scale(1.1); /*Opera scale version*/
+    box-shadow: 0px 0px 30px gray; /*CSS3 shadow: 30px blurred shadow all around image*/
+    -webkit-box-shadow: 0px 0px 30px gray; /*Safari shadow version*/
+    -moz-box-shadow: 0px 0px 30px gray; /*Mozilla shadow version*/
+    opacity: 1;
+}
+
+.toasang {
+    margin: 20px;
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    border-radius: 100%;
+    font: 700 30px/80px 'arial';
+    text-decoration: none;
+    color: #313131;
+    z-index: 1;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+    .toasang:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 100%;
+        background: #dfdfdf;
+        z-index: -1;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    .toasang:hover {
+        color: #fff;
+        background: #399;
+    }
+
+        .toasang:hover:after {
+            background: transparent;
+            -webkit-transform: scale(1.6);
+            -moz-transform: scale(1.6);
+            -ms-transform: scale(1.6);
+            -o-transform: scale(1.6);
+            transform: scale(1.6);
+        }
+
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+body, html {
+    height: 100%;
+}
+
+
