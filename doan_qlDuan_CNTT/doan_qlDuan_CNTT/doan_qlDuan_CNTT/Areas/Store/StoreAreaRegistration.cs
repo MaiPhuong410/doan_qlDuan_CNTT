@@ -17,7 +17,7 @@ namespace doan_qlDuan_CNTT.Areas.Store
             context.MapRoute(
                 "Store_default",
                 "Store/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", controller ="Home",id = UrlParameter.Optional }
             );
         }
     }

@@ -262,7 +262,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="Char(15)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(30)")]
 		public string Password
 		{
 			get
@@ -309,7 +309,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MaCapDo;
+		private int _MaCapDo;
 		
 		private string _TenCapDo;
 		
@@ -321,7 +321,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaCapDoChanging(string value);
+    partial void OnMaCapDoChanging(int value);
     partial void OnMaCapDoChanged();
     partial void OnTenCapDoChanging(string value);
     partial void OnTenCapDoChanged();
@@ -334,8 +334,8 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCapDo", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaCapDo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCapDo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaCapDo
 		{
 			get
 			{
@@ -645,7 +645,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 		
 		private string _MaSP;
 		
-		private string _MaDH;
+		private int _MaDH;
 		
 		private System.Nullable<int> _SoLuong;
 		
@@ -663,7 +663,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
     partial void OnCreated();
     partial void OnMaSPChanging(string value);
     partial void OnMaSPChanged();
-    partial void OnMaDHChanging(string value);
+    partial void OnMaDHChanging(int value);
     partial void OnMaDHChanged();
     partial void OnSoLuongChanging(System.Nullable<int> value);
     partial void OnSoLuongChanged();
@@ -704,8 +704,8 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDH", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaDH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaDH
 		{
 			get
 			{
@@ -815,7 +815,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 					}
 					else
 					{
-						this._MaDH = default(string);
+						this._MaDH = default(int);
 					}
 					this.SendPropertyChanged("DONHANG");
 				}
@@ -1354,7 +1354,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MaDH;
+		private int _MaDH;
 		
 		private System.Nullable<System.DateTime> _NgayMua;
 		
@@ -1362,7 +1362,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 		
 		private System.Nullable<bool> _TinhTrang;
 		
-		private string _MaKH;
+		private int _MaKH;
 		
 		private EntitySet<CTDONHANG> _CTDONHANGs;
 		
@@ -1372,7 +1372,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaDHChanging(string value);
+    partial void OnMaDHChanging(int value);
     partial void OnMaDHChanged();
     partial void OnNgayMuaChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayMuaChanged();
@@ -1380,7 +1380,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
     partial void OnNgayDuKienGiaoChanged();
     partial void OnTinhTrangChanging(System.Nullable<bool> value);
     partial void OnTinhTrangChanged();
-    partial void OnMaKHChanging(string value);
+    partial void OnMaKHChanging(int value);
     partial void OnMaKHChanged();
     #endregion
 		
@@ -1391,8 +1391,8 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDH", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaDH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaDH
 		{
 			get
 			{
@@ -1471,8 +1471,8 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Char(5) NOT NULL", CanBeNull=false)]
-		public string MaKH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL")]
+		public int MaKH
 		{
 			get
 			{
@@ -1535,7 +1535,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 					}
 					else
 					{
-						this._MaKH = default(string);
+						this._MaKH = default(int);
 					}
 					this.SendPropertyChanged("KHACHHANG");
 				}
@@ -1581,7 +1581,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MaKH;
+		private int _MaKH;
 		
 		private string _HoTen;
 		
@@ -1589,7 +1589,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 		
 		private string _SDT;
 		
-		private string _MaCapDo;
+		private int _MaCapDo;
 		
 		private EntitySet<DONHANG> _DONHANGs;
 		
@@ -1599,7 +1599,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaKHChanging(string value);
+    partial void OnMaKHChanging(int value);
     partial void OnMaKHChanged();
     partial void OnHoTenChanging(string value);
     partial void OnHoTenChanged();
@@ -1607,7 +1607,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
     partial void OnDiaChiChanged();
     partial void OnSDTChanging(string value);
     partial void OnSDTChanged();
-    partial void OnMaCapDoChanging(string value);
+    partial void OnMaCapDoChanging(int value);
     partial void OnMaCapDoChanged();
     #endregion
 		
@@ -1618,8 +1618,8 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaKH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaKH
 		{
 			get
 			{
@@ -1698,8 +1698,8 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCapDo", DbType="Char(5) NOT NULL", CanBeNull=false)]
-		public string MaCapDo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCapDo", DbType="Int NOT NULL")]
+		public int MaCapDo
 		{
 			get
 			{
@@ -1762,7 +1762,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 					}
 					else
 					{
-						this._MaCapDo = default(string);
+						this._MaCapDo = default(int);
 					}
 					this.SendPropertyChanged("CapDoThanhVien");
 				}
@@ -1814,7 +1814,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 		
 		private System.Nullable<int> _GTKM;
 		
-		private string _MaCapDo;
+		private int _MaCapDo;
 		
 		private EntityRef<CapDoThanhVien> _CapDoThanhVien;
 		
@@ -1828,7 +1828,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
     partial void OnLoaiKMChanged();
     partial void OnGTKMChanging(System.Nullable<int> value);
     partial void OnGTKMChanged();
-    partial void OnMaCapDoChanging(string value);
+    partial void OnMaCapDoChanging(int value);
     partial void OnMaCapDoChanged();
     #endregion
 		
@@ -1898,8 +1898,8 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCapDo", DbType="Char(5) NOT NULL", CanBeNull=false)]
-		public string MaCapDo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCapDo", DbType="Int NOT NULL")]
+		public int MaCapDo
 		{
 			get
 			{
@@ -1949,7 +1949,7 @@ namespace doan_qlDuan_CNTT.Areas.Store.Models
 					}
 					else
 					{
-						this._MaCapDo = default(string);
+						this._MaCapDo = default(int);
 					}
 					this.SendPropertyChanged("CapDoThanhVien");
 				}

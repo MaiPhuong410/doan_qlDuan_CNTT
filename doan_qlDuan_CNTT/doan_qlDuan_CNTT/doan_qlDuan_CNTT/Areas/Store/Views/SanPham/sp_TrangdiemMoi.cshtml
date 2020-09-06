@@ -1,18 +1,18 @@
 ﻿@model IEnumerable<doan_qlDuan_CNTT.Areas.Store.ViewModels.SanPhamViewModel>
 
 @{
-    ViewBag.Title = "sp_TrangdiemMoi";
+    ViewBag.Title = "Trang điểm môi";
     Layout = "~/Areas/Store/Views/Shared/_Layout.cshtml";
 }
 
-<h2>sp_TrangdiemMoi</h2>
+<h2>TRANG ĐIỂM MÔI</h2>
 
 <p>
     @using (Html.BeginForm())
     {
         <str>
             <th>
-    <p>@Html.TextBox("searchString") <input type="submit" value="Tìm Kiếm" /></p>
+    <p>@Html.TextBox("searchString") <input type="submit" value="Tìm Kiếm" style="background-color:lightpink"/></p>
     </th>
     </str>
 }
