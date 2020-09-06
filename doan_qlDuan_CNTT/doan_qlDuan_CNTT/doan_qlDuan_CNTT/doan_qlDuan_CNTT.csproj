@@ -141,6 +141,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Admin.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Store\Controllers\GioHangController.cs" />
+    <Compile Include="Areas\Store\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Store\Controllers\SanPhamController.cs" />
+    <Compile Include="Areas\Store\Controllers\ThanhToanController.cs" />
+    <Compile Include="Areas\Store\Models\CartItem.cs" />
+    <Compile Include="Areas\Store\Models\Order.cs" />
+    <Compile Include="Areas\Store\Models\OrderDetails.cs" />
+    <Compile Include="Areas\Store\Models\QLCH.designer.cs" />
+    <Compile Include="Areas\Store\Models\QLCH1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLCH.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Store\StoreAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -372,6 +385,14 @@
     <Content Include="Areas\Admin\Views\DonHang\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ChiTietDonHang\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product\SPBanIt.cshtml" />
+    <Content Include="Areas\Store\Models\QLCH.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLCH1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Areas\Store\Models\QLCH.dbml.layout">
+      <DependentUpon>QLCH.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.0.js" />
@@ -406,7 +427,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Store\Controllers\" />
     <Folder Include="Areas\Store\Data\" />
     <Folder Include="Areas\Store\Views\Shared\" />
     <Folder Include="Models\" />
